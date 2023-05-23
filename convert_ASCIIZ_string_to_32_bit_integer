@@ -1,5 +1,5 @@
 .data
-A: .asciiz "0001200"
+A: .asciiz "000120"
 Aend: .asciiz "Aend"
 .text
 a_to_i:
