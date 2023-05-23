@@ -1,1 +1,34 @@
-
+.data
+A: .asciiz "0001200"
+Aend: .asciiz "Aend"
+.text
+a_to_i:
+	
+	la $a0, A#   $a0 = address A
+	la $a1, Aend#   $a1 = address Aend
+	addi $v1, $zero, 0# out = 0
+	addi $t0, $zero, 0# i = $t0
+	addi $t1, $zero, 2# j = $t1
+check_bit_zero:
+	add $s0, $a0, $t0 # $s0 = address A + i
+	lb $t7, 0($s0) #  $t7 = A[i] 
+	addi $t0, $t0, 1 
+	beq $t7, 48, check_bit_zero # A[i] = 0 continue cheking
+end_check_bit_zero:
+	
+	addi $t4, $zero, 1
+convert_to_integer:
+	sub $s1,$a1,$t1 # $s1 = address Aend - i
+	slt $t5, $s1, $s0 # adrress aend < adress a
+	bne $t5, $zero, end_convert_to_integer #  end
+	lb $t8, 0($s1)   #$t8 = a[aend - i]
+multiplication:
+	subi $t8, $t8, 48
+	mul $t8, $t4, $t8
+	add $v1, $v1, $t8
+end_multiplication:
+	mul $t4, $t4, 10  #don_vi *= 10
+	addi $t1, $t1, 1 # next adress aend -1
+	j  convert_to_integer
+end_convert_to_integer:
+end_a_to_i:
