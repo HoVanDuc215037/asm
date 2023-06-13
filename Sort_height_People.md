@@ -6,7 +6,7 @@ a:  .word -1, 150, 190, 170, -1, -1, 160, 180
 b:  .word
 .text
 main:
-# Find people
+# Find peoplE
 	li $t1, 0		# index a: i = 0
 	jal UP_i		# $t5 = 4i
 	nop
