@@ -1,7 +1,7 @@
 .data
 A: .asciiz "000120"
 Aend: .asciiz "Aend"
-.text
+.text #main 
 a_to_i:
 	
 	la $a0, A#   $a0 = address A
