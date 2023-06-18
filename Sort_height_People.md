@@ -1,5 +1,5 @@
 # asm
-#With Tran Van Duy 20215017
+#With Tran Van Duy 20215017..
 
 .data
 a:  .word -1, 150, 190, 170, -1, -1, 160, 180
