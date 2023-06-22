@@ -17,7 +17,7 @@ main:
 Check_a:
 	slt $t0, $t1, $s0
 	beq $t0, $zero, Sort_b	# if i >= 8 => Sort_b
-	lw $s1, a($t5)	# Load a[i]
+	lw $s1, a($t5)	# Load a[i];
 	bne $s1, -1, Insert_b	# if a[i] != -1 => Insert_b
 	addi $t1, $t1, 1	# i = i + 1
 	jal UP_i		# $t5 = 4i
