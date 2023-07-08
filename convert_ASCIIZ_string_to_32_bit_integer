@@ -27,7 +27,7 @@ multiplication:
 	mul $t8, $t4, $t8
 	add $v1, $v1, $t8
 end_multiplication:
-	mul $t4, $t4, 10  #don_vi *= 10
+	mul $t4, $t4, 10  #don_vi *= 10..
 	addi $t1, $t1, 1 # next adress aend -1
 	j  convert_to_integer
 end_convert_to_integer:
